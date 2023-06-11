@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-countdown-timer/static/css/main.a6d73bc9.css",
+    "main.js": "/react-countdown-timer/static/js/main.a45cd416.js",
+    "static/media/bg-stars.svg": "/react-countdown-timer/static/media/bg-stars.166881a1c03d6b1239f5.svg",
+    "static/media/pattern-hills.svg": "/react-countdown-timer/static/media/pattern-hills.815d688fd937623063b5.svg",
+    "index.html": "/react-countdown-timer/index.html",
+    "main.a6d73bc9.css.map": "/react-countdown-timer/static/css/main.a6d73bc9.css.map",
+    "main.a45cd416.js.map": "/react-countdown-timer/static/js/main.a45cd416.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6d73bc9.css",
+    "static/js/main.a45cd416.js"
+  ]
+}

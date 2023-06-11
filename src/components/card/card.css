@@ -1,0 +1,250 @@
+.card {
+    --borderRadius: 8px;
+    --mobile-borderRadius: 4px;
+    position: relative;
+    width: 150px;
+    height: 140px;
+    font-size: 8rem;
+    color: var(--Soft-red);
+    background-color: var(--Dark-desaturated-blue);
+    border-radius: var(--borderRadius);
+    box-shadow: 0px 8px 0px rgba(0, 0, 0, .5);
+    perspective-origin: 50% 50%;
+    perspective: 300px;
+
+}
+
+.upper-card,
+.lower-card {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+
+}
+
+.upper-card {
+    align-items: flex-end;
+    background-color: var(--card-top);
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+
+}
+
+.upper-card>span {
+    transform: translateY(50%);
+}
+
+.lower-card {
+    align-items: flex-start;
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+
+}
+
+.lower-card>span {
+    transform: translateY(-50%);
+}
+
+.flip-card { 
+    top: 0%;  
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+
+.flip-card.unfold {   
+    top: 50%; 
+    align-items: flex-start;
+    transform-origin: 50% 0%;
+    transform: rotateX(180deg);
+    background-color: var(--Dark-desaturated-blue);
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+.flip-card.unfold>span {
+    transform: translateY(-50%);
+}
+
+.flip-card.fold {  
+    top: 0%;  
+    align-items: flex-end;
+    transform-origin: 50% 100%;
+    transform: rotateX(0deg);
+    background-color: var(--card-top);
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+}
+
+.flip-card.fold>span {
+    transform: translateY(50%);
+}
+
+.fold, .unfold {
+    animation: flip 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.3s forwards;
+    transform-style: preserve-3d;
+}
+
+.unfold {
+    animation-name: flop;
+}
+
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(-180deg);
+    }
+}
+
+@keyframes flop {
+    0% {
+        transform: rotateX(180deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+
+.upper-card::before,
+.upper-card::after,
+.lower-card::before,
+.lower-card::after,
+.flip-card::before,
+.flip-card::after {
+    top: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    content: "";
+    background-color: #161718;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.lower-card::before,
+.lower-card::after,
+.top.lower::before,
+.top.lower::after,
+.flip-card::before,
+.flip-card::after {
+    top: 0;    
+}
+
+
+.flip-card::before,
+.lower-card::before,
+.upper-card::before,
+.card-back::before,
+.card-flip::before {
+    left: -8px;
+}
+
+.flip-card::after,
+.lower-card::after,
+.upper-card::after,
+.card-back::after,
+.card-flip::after {
+    right: -8px;
+}
+
+@media (max-width:768px) {
+    .card {
+        --borderRadius: 8px;
+        position: relative;
+        width: 70px;
+        height: 68px;
+        line-height: 68px;
+        font-size: 3.5rem;
+        color: var(--Soft-red);
+        background-color: var(--Dark-desaturated-blue);
+        border-radius: 4px;
+        box-shadow: 0px 4px 0px rgba(0, 0, 0, .2);
+        perspective-origin: 50% 50%;
+        perspective: 300px;
+
+    }
+
+
+    .card-back::before,
+    .card-back::after,
+    .card-flip::before,
+    .card-flip::after {
+        width: 7px;
+        height: 7px;
+    }
+
+    .card-back::before,
+    .card-flip::before {
+        left: -4px;
+    }
+
+    .upper-card {
+
+        border-top-left-radius: var(--mobile-borderRadius);
+        border-top-right-radius: var(--mobile-borderRadius);
+
+    }
+
+    .lower-card {
+        border-bottom-left-radius: var(--mobile-borderRadius);
+        border-bottom-right-radius: var(--mobile-borderRadius);
+
+    }
+
+    .flip-card.unfold {
+
+        border-bottom-left-radius: var(--mobile-borderRadius);
+        border-bottom-right-radius: var(--mobile-borderRadius);
+    }
+
+    .flip-card.fold {
+
+        border-top-left-radius: var(--mobile-borderRadius);
+        border-top-right-radius: var(--mobile-borderRadius);
+    }
+
+    .upper-card::before,
+    .upper-card::after,
+    .lower-card::before,
+    .lower-card::after,
+    .flip-card::before,
+    .flip-card::after {
+
+        width: 8px;
+        height: 8px;
+    }
+
+    .flip-card::before,
+    .lower-card::before,
+    .upper-card::before,
+    .card-back::before,
+    .card-flip::before {
+        left: -5px;
+    }
+
+    .flip-card::after,
+    .lower-card::after,
+    .upper-card::after,
+    .card-back::after,
+    .card-flip::after {
+        right: -5px;
+    }
+
+
+}

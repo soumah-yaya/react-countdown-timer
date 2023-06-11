@@ -1,38 +1,60 @@
 .App {
-  text-align: center;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--White);
+    height: 100vh;
+    background: url(./assets/images/pattern-hills.svg) no-repeat bottom/100% , url(./assets/images/bg-stars.svg), linear-gradient(0deg, var(--bg-light), var(--bg-dark) 50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--width);
+    height: 100%;
+    margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    font-size: 2rem;
+    letter-spacing: 0.4em;
+    margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper>header {
+    padding-top: 140px;
+    padding-bottom: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper>main {
+    flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper>footer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: auto;
+    padding-bottom: 70px;
+    
+}
+.media-icon{
+    color: var(--Grayish-blue);
+}
+.media-icon:hover {
+color: var(--Soft-red);
+}
+
+@media (max-width:768px) {
+    .App {
+        background-position: -780px bottom;
+        background-size: auto;
+    }
+
+    .wrapper>footer {
+
+        padding-bottom: 50px;
+
+    }
 }

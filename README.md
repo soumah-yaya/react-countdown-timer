@@ -4,7 +4,7 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
 
 ### Links
 
-- Solution URL: [code](https://github.com/soumah-yaya/launch-countdown-timer)
-- Live Site URL: [live](https://soumah-yaya.github.io/launch-countdown-timer)
+- Solution URL: [code](https://github.com/soumah-yaya/react-countdown-timer)
+- Live Site URL: [live](https://soumah-yaya.github.io/react-countdown-timer/)
 
 
